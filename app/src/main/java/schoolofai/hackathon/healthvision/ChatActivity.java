@@ -101,6 +101,9 @@ public class ChatActivity extends Activity {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
+            Intent intent = new Intent(this, RecognitionActivity.class);
+            intent.putExtra("data", imageBitmap);
+            startActivity(intent);
         }
     }
 
