@@ -34,7 +34,6 @@
             android:id="@+id/chatMsg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
             android:padding="8dp"
             android:text="abcdefgh"
             android:textSize="18sp"

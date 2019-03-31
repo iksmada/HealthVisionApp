@@ -43,7 +43,7 @@ public class ChatActivity extends Activity {
     //private SessionName session;
     private String[] botReply1 =  {
             "Bem vinda, Catarina",
-            "Fazem 6 meses e 3 dias desdo seu último exame de pele.",
+            "Fazem 6 meses e 3 dias desde o seu último exame de pele.",
             "Seu médico Dr. Jacó Saraiva recomendou um novo exame de acompanhamento a partir de 27 de março de 2019.",
             "Vamos fazer um novo exame de pele?"};
     private String[] botReply2 =  {
