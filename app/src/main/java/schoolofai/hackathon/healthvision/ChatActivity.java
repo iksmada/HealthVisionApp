@@ -27,6 +27,7 @@ public class ChatActivity extends Activity {
     private static final int USER = 10001;
     private static final int BOT = 10002;
     private static final int REQUEST_IMAGE_CAPTURE = 0001;
+    private static final int REQUEST_CLASSIFICATION = 0002;
 
     private String uuid = UUID.randomUUID().toString();
     private LinearLayout chatLayout;
@@ -103,7 +104,7 @@ public class ChatActivity extends Activity {
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             Intent intent = new Intent(this, RecognitionActivity.class);
             intent.putExtra("data", imageBitmap);
-            startActivity(intent);
+            startActivityForResult(intent, REQUEST_CLASSIFICATION);
         }
     }
 

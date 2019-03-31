@@ -39,4 +39,7 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly'
     // Use local TensorFlow library
     // implementation 'org.tensorflow:tensorflow-lite-local:0.0.0'
+
+
+    implementation 'org.tensorflow:tensorflow-android:+'
 }

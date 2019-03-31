@@ -31,7 +31,17 @@ public class RecognitionActivity extends Activity {
 
             SpannableStringBuilder textToShow = new SpannableStringBuilder();
             classifier.classifyFrame(imageBitmap, textToShow);
-            float proba[] = classifier.getProbabilities();
+            float probas[] = classifier.getProbabilities();
+            int clazz = -1;
+            double proba_d[] = new double[20];
+            if (probas.length >= 20) {
+                for (int i = 0; i < probas.length; i++) {
+                    proba_d[i] = probas[i];
+                }
+                //clazz = RandomForestClassifier.predict(proba_d);
+            }
+            String class_ = "histopatology";
+
             Toast.makeText(this, textToShow, Toast.LENGTH_LONG).show();
             imageBitmap.recycle();
         }
