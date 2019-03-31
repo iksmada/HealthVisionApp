@@ -325,6 +325,16 @@ public abstract class ImageClassifier {
   protected abstract void setProbability(int labelIndex, Number value);
 
   /**
+   * Read the probability value for the specified label This is either the original value as it was
+   * read from the net's output or the updated value after the filter was applied.
+   *
+   * @param labelIndex
+   * @return
+   */
+  protected abstract float[] getProbabilities();
+
+
+  /**
    * Get the normalized probability value for the specified label. This is the final value as it
    * will be shown to the user.
    *

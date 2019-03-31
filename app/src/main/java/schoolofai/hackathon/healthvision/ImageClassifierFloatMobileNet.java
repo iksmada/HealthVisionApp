@@ -82,6 +82,11 @@ public class ImageClassifierFloatMobileNet extends ImageClassifier {
   }
 
   @Override
+  protected float[] getProbabilities(){
+    return labelProbArray[0];
+  }
+
+  @Override
   protected float getNormalizedProbability(int labelIndex) {
     return labelProbArray[0][labelIndex];
   }

@@ -31,6 +31,7 @@ public class RecognitionActivity extends Activity {
 
             SpannableStringBuilder textToShow = new SpannableStringBuilder();
             classifier.classifyFrame(imageBitmap, textToShow);
+            float proba[] = classifier.getProbabilities();
             Toast.makeText(this, textToShow, Toast.LENGTH_LONG).show();
             imageBitmap.recycle();
         }
