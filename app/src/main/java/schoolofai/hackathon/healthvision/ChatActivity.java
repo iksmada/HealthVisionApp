@@ -56,6 +56,12 @@ public class ChatActivity extends Activity {
             "Muito bem, Catarina!",
             "Vou compartilhar as informações com o Dr. Jacó Saraiva para agendarmos uma nova consulta.",
             "Você gostaria que fosse uma teleconsulta?"};
+    private String[] botReply4 =  {
+            "Ok, vamos marcar uma teleconsulta com o Dr. Jacó Saraiva.",
+            "Podemos confirmar sua consulta para o dia: \n01 de abril de 2019 às 14:00?"};
+    private String[] botReply5 =  {
+            "Confirmado, consulta agendada com o Dr. Jacó Saraiva para o dia 01 de abril às 14:00 pela nossa teleconsulta.",
+            "Até mais!"};
     private int messageCounter;
     private int chatCounter;
 
@@ -105,6 +111,9 @@ public class ChatActivity extends Activity {
             Intent intent = new Intent(this, RecognitionActivity.class);
             intent.putExtra("data", imageBitmap);
             startActivityForResult(intent, REQUEST_CLASSIFICATION);
+        } else if (requestCode == REQUEST_CLASSIFICATION && resultCode == RESULT_OK) {
+            messageCounter = 0;
+            startChatBot(botReply3);
         }
     }
 
@@ -158,7 +167,11 @@ public class ChatActivity extends Activity {
                     }
                     break;
                 case 2:
-                    startChatBot(botReply3);
+                    startChatBot(botReply4);
+                    break;
+                case 3:
+                    startChatBot(botReply5);
+                    break;
                 default:
                     startChatBot(new String[] {"Como posso ajudar?"});
             }

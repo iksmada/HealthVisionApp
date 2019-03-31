@@ -35,15 +35,23 @@ public class RecognitionActivity extends Activity {
             int clazz = -1;
             double proba_d[] = new double[20];
             if (probas.length >= 20) {
-                for (int i = 0; i < probas.length; i++) {
+                for (int i = 0; i < 20; i++) {
                     proba_d[i] = probas[i];
                 }
-                //clazz = RandomForestClassifier.predict(proba_d);
+                clazz = RandomForestClassifier.predict(proba_d);
             }
-            String class_ = "histopatology";
+            String class_name = null;
+            if (clazz == 0 ) {
+                class_name = "benign";
+            } else if (clazz == 1) {
+                class_name = "histopatology";
+            }
 
             Toast.makeText(this, textToShow, Toast.LENGTH_LONG).show();
             imageBitmap.recycle();
+
+            setResult(RESULT_OK);
+            finish();
         }
     }
 
